@@ -20,14 +20,26 @@
         <button class="btn btn-check">Check!</button>
       </section>
 
-      <section class="right">
-        <p class="message">Start guessing...</p>
-        <p class="label-score">💯 Score: <span class="score">20</span></p>
-        <p class="label-highscore">
-          🥇 Highscore: <span class="highscore">0</span>
-        </p>
-      </section>
-    </main>
+     <section class="right">
+      <p class="message">Start guessing...</p>
+      <p class="label-score">💯 Score: <span class="score">20</span></p>
+      <p class="label-highscore">🥇 Highscore: <span class="highscore">0</span></p>
+
+      <div class="leaderboard-container">
+        <h3>🏆 Global Top 5</h3>
+        <table class="leaderboard-table">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Player</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboard-body">
+            </tbody>
+        </table>
+      </div>
+    </section>
 
     <script src="script.js"></script>
   </body>

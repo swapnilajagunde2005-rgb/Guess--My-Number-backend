@@ -19,14 +19,19 @@ try {
 }
 
 // Intercept raw incoming request data stream
-$inputData = json_decode(file_get_contents("php://input"), true);
 
+$inputData = json_decode(file_get_contents("php://input"), true);
 $userGuessName = isset($inputData['username']) ? trim($inputData['username']) : '';
 $userScore = isset($inputData['score']) ? intval($inputData['score']) : 0;
 
-// Validate payload contents before running structural updates
-if (empty($userGuessName) || $userScore <= 0) {
-    echo json_encode(["status" => "error", "message" => "Invalid inputs received"]);
+if (empty($userGuessName) || strlen($userGuessName) > 20) {
+    echo json_encode(["status" => "error", "message" => "Invalid name parameters."]);
+    exit();
+}
+
+if ($userScore <= 0 || $userScore > 20) {
+    // Intercepts and blocks anyone trying to inject fake high scores via the browser console
+    echo json_encode(["status" => "error", "message" => "Security Alert: Falsified score detected!"]);
     exit();
 }
 

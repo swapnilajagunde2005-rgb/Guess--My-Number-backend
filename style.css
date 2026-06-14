@@ -88,3 +88,42 @@ main {
   flex-direction: column;
   gap: 1.5rem;
 }
+/* ==========================================
+   LEADERBOARD STYLING (ADD TO THE BOTTOM)
+   ========================================== */
+.leaderboard-container {
+  margin-top: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #444;
+}
+
+.leaderboard-container h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  text-align: center;
+  color: #60b347;
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+  padding: 0.5rem;
+  border-bottom: 1px solid #333;
+}
+
+.leaderboard-table th {
+  color: #aaa;
+  font-weight: 600;
+}
+
+.leaderboard-table td {
+  color: #fff;
+}
